@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =========================================================
+       EDIT 1: BROWSER TAB TITLE + GOOGLE DESCRIPTION
+       Change the two lines below.
+  ========================================================== -->
+  <title>Aaron Jones — Artist</title>
+  <meta name="description" content="The work of Toronto-based visual artist Aaron Jones.">
+
+  <!-- Keep index.html and style.css inside the same folder. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- CUSTOM FONT: keep Archivo-Regular.woff beside index.html -->
+  <link rel="preload" href="Archivo-Regular.woff" as="font" type="font/woff" crossorigin>
+</head>
+
+<body>
+  <main id="top" class="site-shell">
+
+    <!-- =======================================================
+         EDIT 2: NAME + TOP NAVIGATION
+         Change visible words between > and <.
+         Later, #work, #about and #cv can open your popup sections.
+    ======================================================== -->
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="artist-name" href="#top">Aaron Jones</a>
+
+      <nav class="primary-nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a class="open-cv" href="cv 2026 aaronjones.pdf">CV</a>
+      </nav>
+    </header>
+
+    <!-- =======================================================
+         EDIT 3: LANDING VIDEOS
+         Put these files in the SAME folder as index.html:
+           landing-01.mp4
+           landing-02.mp4
+           landing-03.mp4
+
+         To rename a video, change its filename below too.
+         One video is chosen randomly whenever the page opens.
+    ======================================================== -->
+    <section class="landing" aria-label="Selected moving image">
+      <div class="video-frame">
+        <video id="landing-video" autoplay muted loop playsinline preload="metadata">
+          Your browser does not support HTML video.
+        </video>
+
+        <!-- Brief title card shown whenever a video begins. -->
+        <div id="video-information" class="video-information" aria-live="polite">
+          <h2 id="video-title">Video title</h2>
+          <p id="video-details">Date — Exhibition, Location</p>
+        </div>
+
+        <div class="video-controls">
+          <button id="sound-button" type="button">Sound on</button>
+          <button id="next-button" type="button">Next film</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         EDIT 4: WORK SECTION
+
+         Clicking Work in the navigation or ticker scrolls here.
+         Clicking a year reveals its project titles beside it.
+         Clicking a project title opens its own documentation popup.
+
+         To edit the list, change the visible title and its data-project slug.
+         The matching slug must also exist in the documentation data below.
+    ======================================================== -->
+    <section id="work" class="work-section" aria-labelledby="work-title">
+      <h1 id="work-title">Work</h1>
+
+      <ul class="year-list">
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2026</button><div class="year-options"><button type="button" data-year="2026" data-project="installation">Installations</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2025</button><div class="year-options"><button type="button" data-year="2025" data-project="into-the-wild">Into the Wild</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2024</button><div class="year-options"><button type="button" data-year="2024" data-project="black-summer-1991">BLACK SUMMER 1991</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2023</button><div class="year-options"><button type="button" data-year="2023" data-project="chasing-shadows">Chasing Shadows</button><button type="button" data-year="2023" data-project="fountain-of-dreams">Fountain of Dreams</button><button type="button" data-year="2023" data-project="we-are-story">We Are Story</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2022</button><div class="year-options"><button type="button" data-year="2022" data-project="between-sea-and-sky">Between Sea and Sky</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2021</button><div class="year-options"><button type="button" data-year="2021" data-project="brobdingnagian">Brobdingnagian</button><button type="button" data-year="2021" data-project="movers-and-makers">Movers and Makers</button><button type="button" data-year="2021" data-project="moca-toronto">MOCA Toronto</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2020</button><div class="year-options"><button type="button" data-year="2020" data-project="three-thirty">Three Thirty</button><button type="button" data-year="2020" data-project="closed-fist-open-palm">Closed Fist Open Palm</button><button type="button" data-year="2020" data-project="exercise-nerve">Exercise Nerve</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2018</button><div class="year-options"><button type="button" data-year="2018" data-project="sweet-country">Sweet Country</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">2017</button><div class="year-options"><button type="button" data-year="2017" data-project="an-unassailable-and-monumental-dignity">An unassailable and monumental dignity</button></div></li>
+        <li class="year-row"><button class="year-toggle" type="button" aria-expanded="false">20xx</button><div class="year-options"><button type="button" data-year="OTHER" data-project="other">misc.</button></div></li>
+    </section>
+
+    <!-- =======================================================
+         EDIT 5: ABOUT SECTION
+         Replace this placeholder paragraph with your biography.
+    ======================================================== -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <h1 id="about-title">About</h1>
+      <p>
+        Aaron Jones (b. 1993, Toronto, Canada) is a visual artist who is working across photography, 
+        collage, video, and installation. He has exhibited at museums, galleries, and institutions including but not 
+                limited to the McMichael Canadian Art Collection, Art Gallery of Ontario, Museum of 
+                Contemporary Art Toronto, Robert McLaughlin Gallery, McMaster Museum of Art, 
+                Fonderie Darling, and Mercer Union. His work is held in public, institutional, 
+                and corporate collections including the Art Gallery of Ontario, The Image Centre, 
+                Robert McLaughlin Gallery, McMaster Museum of Art, Massey College, Doris McCarthy 
+                Gallery at the University of Toronto, the Wedge Collection, Royal Bank of Canada, 
+                Equitable Bank, Scotiabank, and Pardon. Jones’s work was included in *Vitamin C+: 
+                Collage in Contemporary Art, published by Phaidon in 2023. In 2020, he received 
+                the Gattuso Prize for Best Featured Exhibition at the CONTACT Photography Festival. 
+                He is represented by Zalucky Contemporary.
+      </p>
+    </section>
+
+    <!-- =======================================================
+         EDIT 4: BOTTOM TICKER
+         Change the words and links inside this FIRST ticker-group.
+         Then make the SECOND ticker-group match it exactly.
+
+         Email link format: mailto:your@email.com
+         Website link format: https://example.com
+    ======================================================== -->
+    <div class="ticker" aria-label="Site links">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span class="ticker-entry"><a href="#top">Aaron Jones</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="#work">Work</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="#about">About</a><span>✦</span></span>
+          <span class="ticker-entry"><a class="open-cv" href="cv 2026 aaronjones.pdf">CV</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="mailto:YOUR-EMAIL-HERE">Contact</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="https://www.instagram.com/a4ronjones/" target="_blank" rel="noopener">Instagram</a><span>✦</span></span>
+        </div>
+
+        <!-- Duplicate copy makes the movement seamless. -->
+        <div class="ticker-group" aria-hidden="true">
+          <span class="ticker-entry"><a href="#top">Aaron Jones</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="#work">Work</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="#about">About</a><span>✦</span></span>
+          <span class="ticker-entry"><a class="open-cv" href="cv 2026 aaronjones.pdf">CV</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="mailto:YOUR-EMAIL-HERE">Contact</a><span>✦</span></span>
+          <span class="ticker-entry"><a href="https://www.instagram.com/a4ronjones/" target="_blank" rel="noopener">Instagram</a><span>✦</span></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- White duplicate text is clipped inside this exact video-sized mask. -->
+  <div id="video-text-mask" class="video-text-mask" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       EDIT 6: DOCUMENTATION POPUP
+       Images are inserted here automatically by the script.
+  ========================================================== -->
+  <dialog id="gallery-dialog" class="site-dialog">
+    <div class="dialog-window">
+      <header class="dialog-header">
+        <h2 id="gallery-title">Documentation</h2>
+        <button class="close-dialog" type="button" aria-label="Close documentation">Close</button>
+      </header>
+      <div id="gallery-images" class="gallery-images"></div>
+      <!-- Desktop only: follows the mouse while an image is hovered. -->
+      <div id="gallery-hover-details" class="gallery-hover-details" aria-hidden="true">
+        <span class="hover-image-name"></span>
+        <span class="hover-image-date"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- FULL-WINDOW IMAGE VIEWER: click or tap any gallery image to open it. -->
+  <dialog id="image-viewer" class="image-viewer" aria-label="Full-size artwork image">
+    <img id="full-size-image" src="" alt="">
+    <div id="fullscreen-details" class="fullscreen-details">
+      <span id="fullscreen-title" class="fullscreen-title"></span>
+      <span id="fullscreen-date"></span>
+      <span id="fullscreen-location"></span>
+      <a id="fullscreen-more-info" href="" target="_blank" rel="noopener noreferrer">More information</a>
+    </div>
+    <span id="swipe-cue" class="swipe-cue" aria-hidden="true">SWIPE</span>
+  </dialog>
+
+  <!-- =========================================================
+       EDIT 7: CV POPUP
+       Put your PDF in the same folder and name it cv.pdf.
+       Change BOTH cv.pdf references below if you rename it.
+  ========================================================== -->
+  <dialog id="cv-dialog" class="site-dialog">
+    <div class="dialog-window cv-window">
+      <header class="dialog-header">
+        <h2>Curriculum Vitae</h2>
+        <div class="dialog-actions">
+          <a href="cv 2026 aaronjones.pdf" download>Download PDF</a>
+          <button class="close-dialog" type="button" aria-label="Close CV">Close</button>
+        </div>
+      </header>
+      <iframe src="cv 2026 aaronjones.pdf" title="Aaron Jones curriculum vitae"></iframe>
+    </div>
+  </dialog>
+
+  <script>
+    /* =========================================================
+       EDIT 8: VIDEO FILENAMES + INFORMATION
+       Change each filename, title, date and exhibition information here.
+    ========================================================== */
+    const videos = [
+      { filename: "landing-01.mp4", title: "Wandering", details: "2023 — Fountain of Dreams , Oshawa" },
+      { filename: "landing-02.mp4", title: "Untitled", details: "2023— Chasing Shadows, Toronto" },
+      { filename: "landing-03.mp4", title: "Untitlede", details: "2023 — N/A, Etobicoke" }
+    ];
+
+    const video = document.getElementById("landing-video");
+    const soundButton = document.getElementById("sound-button");
+    const nextButton = document.getElementById("next-button");
+    const videoInformation = document.getElementById("video-information");
+    const videoTitle = document.getElementById("video-title");
+    const videoDetails = document.getElementById("video-details");
+    /* Avoid repeating the same film on consecutive page loads. */
+    const previousStoredVideo = sessionStorage.getItem("lastLandingVideo");
+    const previousVideo = previousStoredVideo === null ? -1 : Number(previousStoredVideo);
+    const randomChoices = videos.map(function (_, index) { return index; }).filter(function (index) {
+      return index !== previousVideo;
+    });
+    let currentVideo = randomChoices[Math.floor(Math.random() * randomChoices.length)];
+    let informationTimer;
+
+    function loadVideo() {
+      const selectedVideo = videos[currentVideo];
+      sessionStorage.setItem("lastLandingVideo", String(currentVideo));
+      video.src = selectedVideo.filename;
+      videoTitle.textContent = selectedVideo.title;
+      videoDetails.textContent = selectedVideo.details;
+      video.load();
+      video.play().catch(function () {
+        /* Some browsers wait for a tap before autoplaying. */
+      });
+
+      clearTimeout(informationTimer);
+      videoInformation.classList.remove("is-visible");
+      requestAnimationFrame(function () {
+        videoInformation.classList.add("is-visible");
+      });
+      informationTimer = setTimeout(function () {
+        videoInformation.classList.remove("is-visible");
+      }, 4500);
+    }
+
+    soundButton.addEventListener("click", function () {
+      video.muted = !video.muted;
+      soundButton.textContent = video.muted ? "Sound on" : "Sound off";
+    });
+
+    nextButton.addEventListener("click", function () {
+      currentVideo = (currentVideo + 1) % videos.length;
+      loadVideo();
+    });
+
+    loadVideo();
+
+    /* =========================================================
+       EXACT BLACK / WHITE SPLIT AT THE VIDEO EDGE
+
+       Original text remains black. White duplicates are placed inside a mask
+       matching the exact video rectangle. The video stays the same size.
+    ========================================================== */
+    const videoTextMask = document.getElementById("video-text-mask");
+    const maskedTextSources = document.querySelectorAll(
+      ".work-section h1, .year-toggle, .year-options button, " +
+      ".about-section h1, .about-section p"
+    );
+    const maskedTextPairs = [];
+
+    maskedTextSources.forEach(function (source) {
+      const clone = document.createElement("span");
+      clone.className = "video-text-clone";
+      if (source.closest(".about-section")) {
+        clone.classList.add("about-video-text-clone");
+      }
+      clone.textContent = source.textContent;
+      videoTextMask.appendChild(clone);
+      maskedTextPairs.push({ source: source, clone: clone });
+    });
+
+    function syncVideoTextMask() {
+      const videoRectangle = video.getBoundingClientRect();
+      videoTextMask.style.left = videoRectangle.left + "px";
+      videoTextMask.style.top = videoRectangle.top + "px";
+      videoTextMask.style.width = videoRectangle.width + "px";
+      videoTextMask.style.height = videoRectangle.height + "px";
+
+      maskedTextPairs.forEach(function (pair) {
+        const rectangle = pair.source.getBoundingClientRect();
+        const computed = window.getComputedStyle(pair.source);
+        const clone = pair.clone;
+
+        clone.style.left = (rectangle.left - videoRectangle.left) + "px";
+        clone.style.top = (rectangle.top - videoRectangle.top) + "px";
+        clone.style.width = rectangle.width + "px";
+        clone.style.height = rectangle.height + "px";
+        clone.style.fontFamily = computed.fontFamily;
+        clone.style.fontSize = computed.fontSize;
+        clone.style.fontWeight = computed.fontWeight;
+        clone.style.fontStyle = computed.fontStyle;
+        clone.style.lineHeight = computed.lineHeight;
+        clone.style.letterSpacing = computed.letterSpacing;
+        clone.style.textTransform = computed.textTransform;
+        clone.style.textAlign = computed.textAlign;
+        clone.style.padding = computed.padding;
+        clone.style.visibility = computed.visibility;
+        clone.style.opacity = computed.opacity;
+      });
+    }
+
+    window.addEventListener("scroll", syncVideoTextMask, { passive: true });
+    window.addEventListener("resize", syncVideoTextMask);
+    window.setInterval(syncVideoTextMask, 100);
+    window.requestAnimationFrame(syncVideoTextMask);
+
+    /* =========================================================
+       ABOUT VIDEO WASH
+       As soon as About enters the screen, the video begins a 1.2-second
+       fade toward white. After 0.125 seconds, the About text turns black.
+       Leaving About fades the video back over 1.2 seconds and restores the text.
+    ========================================================== */
+    const aboutSection = document.getElementById("about");
+    let aboutTextTimer = null;
+
+    const aboutObserver = new IntersectionObserver(function (entries) {
+      window.clearTimeout(aboutTextTimer);
+
+      if (entries[0].isIntersecting) {
+        document.body.classList.add("about-video-washed");
+        aboutTextTimer = window.setTimeout(function () {
+          document.body.classList.add("about-text-black");
+        }, 125);
+      } else {
+        document.body.classList.remove("about-video-washed", "about-text-black");
+      }
+    }, { threshold: 0 });
+
+    aboutObserver.observe(aboutSection);
+
+    /* =========================================================
+       EDIT 9: DOCUMENTATION IMAGE FILES
+
+       Make an "images" folder beside index.html, then put image files
+       inside its "webp" folder. Paths therefore begin with "images/webp/".
+       Every project begins with 20 numbered placeholders.
+       Replace or remove filenames inside the correct year and project.
+       You can use .webp, .jpg or .png files.
+    ========================================================== */
+    const documentation = {
+      "2026": {
+        "installation": [
+          "images/webp/2026/installation/01.webp",
+          "images/webp/2026/installation/02.webp",
+          "images/webp/2026/installation/03.webp",
+          "images/webp/2026/installation/04.webp",
+        ]
+      },
+      "2025": {
+        "into-the-wild": [
+          "images/webp/2025/into-the-wild/01.webp",
+          "images/webp/2025/into-the-wild/02.webp",
+          "images/webp/2025/into-the-wild/03.webp",
+          "images/webp/2025/into-the-wild/04.webp",
+          "images/webp/2025/into-the-wild/05.webp",
+          "images/webp/2025/into-the-wild/06.webp",
+          "images/webp/2025/into-the-wild/07.webp",
+          "images/webp/2025/into-the-wild/08.webp",
+          "images/webp/2025/into-the-wild/09.webp",
+          "images/webp/2025/into-the-wild/10.webp",
+          "images/webp/2025/into-the-wild/11.webp",
+        ]
+      },
+      "2024": {
+        "black-summer-1991": [
+          "images/webp/2024/black-summer-1991/01.webp",
+          "images/webp/2024/black-summer-1991/02.webp",
+          "images/webp/2024/black-summer-1991/03.webp",
+        ]
+      },
+      "2023": {
+        "chasing-shadows": [
+          "images/webp/2023/chasing-shadows/01.webp",
+          "images/webp/2023/chasing-shadows/02.webp",
+          "images/webp/2023/chasing-shadows/03.webp",
+          "images/webp/2023/chasing-shadows/04.webp",
+          "images/webp/2023/chasing-shadows/05.webp",
+          "images/webp/2023/chasing-shadows/06.webp",
+          "images/webp/2023/chasing-shadows/07.webp",
+        ],
+        "fountain-of-dreams": [
+          "images/webp/2023/fountain-of-dreams/01.webp",
+          "images/webp/2023/fountain-of-dreams/02.webp",
+          "images/webp/2023/fountain-of-dreams/03.webp",
+          "images/webp/2023/fountain-of-dreams/04.webp",
+          "images/webp/2023/fountain-of-dreams/05.webp",
+          "images/webp/2023/fountain-of-dreams/06.webp",
+          
+        ],
+        "we-are-story": [
+          "images/webp/2023/we-are-story/01.webp",
+     
+        ]
+      },
+      "2022": {
+        "between-sea-and-sky": [
+          "images/webp/2022/between-sea-and-sky/01.webp",
+          "images/webp/2022/between-sea-and-sky/02.webp",
+          "images/webp/2022/between-sea-and-sky/03.webp",
+          "images/webp/2022/between-sea-and-sky/04.webp",
+          "images/webp/2022/between-sea-and-sky/05.webp",
+          "images/webp/2022/between-sea-and-sky/06.webp",
+          "images/webp/2022/between-sea-and-sky/07.webp",
+          "images/webp/2022/between-sea-and-sky/08.webp",
+        ]
+      },
+      "2021": {
+        "brobdingnagian": [
+          "images/webp/2021/brobdingnagian/01.webp",
+          "images/webp/2021/brobdingnagian/02.webp",
+          "images/webp/2021/brobdingnagian/03.webp",
+          "images/webp/2021/brobdingnagian/04.webp",
+          "images/webp/2021/brobdingnagian/05.webp",
+          "images/webp/2021/brobdingnagian/06.webp",
+          "images/webp/2021/brobdingnagian/07.webp",
+          "images/webp/2021/brobdingnagian/08.webp",
+          "images/webp/2021/brobdingnagian/09.webp",
+          "images/webp/2021/brobdingnagian/10.webp",
+          "images/webp/2021/brobdingnagian/11.webp",
+          "images/webp/2021/brobdingnagian/12.webp",
+          
+        ],
+        "movers-and-makers": [
+          "images/webp/2021/movers-and-makers/01.webp",
+          "images/webp/2021/movers-and-makers/02.webp",
+          "images/webp/2021/movers-and-makers/03.webp",
+          "images/webp/2021/movers-and-makers/04.webp",
+          "images/webp/2021/movers-and-makers/05.webp",
+          "images/webp/2021/movers-and-makers/06.webp",
+          "images/webp/2021/movers-and-makers/07.webp",
+          "images/webp/2021/movers-and-makers/08.webp",
+          "images/webp/2021/movers-and-makers/09.webp",
+          
+        ],
+        "moca-toronto": [
+          "images/webp/2021/moca-toronto/01.webp",
+         
+        ]
+      },
+      "2020": {
+        "three-thirty": [
+          "images/webp/2020/three-thirty/01.webp",
+          "images/webp/2020/three-thirty/02.webp",
+          "images/webp/2020/three-thirty/03.webp",
+          "images/webp/2020/three-thirty/04.webp",
+          "images/webp/2020/three-thirty/05.webp",
+          "images/webp/2020/three-thirty/06.webp",
+          "images/webp/2020/three-thirty/07.webp",
+          "images/webp/2020/three-thirty/08.webp",
+          "images/webp/2020/three-thirty/09.webp",
+          "images/webp/2020/three-thirty/10.webp",
+          "images/webp/2020/three-thirty/11.webp",
+        ],
+        "closed-fist-open-palm": [
+          "images/webp/2020/closed-fist-open-palm/01.webp",
+          "images/webp/2020/closed-fist-open-palm/02.webp",
+          "images/webp/2020/closed-fist-open-palm/03.webp",
+          "images/webp/2020/closed-fist-open-palm/04.webp",
+          "images/webp/2020/closed-fist-open-palm/05.webp",
+          "images/webp/2020/closed-fist-open-palm/06.webp",
+          "images/webp/2020/closed-fist-open-palm/07.webp",
+          "images/webp/2020/closed-fist-open-palm/08.webp",
+          "images/webp/2020/closed-fist-open-palm/09.webp",
+          "images/webp/2020/closed-fist-open-palm/10.webp",
+
+        ],
+        "exercise-nerve": [
+          "images/webp/2020/exercise-nerve/01.webp",
+          "images/webp/2020/exercise-nerve/02.webp",
+          "images/webp/2020/exercise-nerve/03.webp",
+          "images/webp/2020/exercise-nerve/04.webp",
+          "images/webp/2020/exercise-nerve/05.webp",
+          "images/webp/2020/exercise-nerve/06.webp",
+          "images/webp/2020/exercise-nerve/07.webp",
+          "images/webp/2020/exercise-nerve/08.webp",
+          "images/webp/2020/exercise-nerve/09.webp",
+          "images/webp/2020/exercise-nerve/10.webp",
+          "images/webp/2020/exercise-nerve/11.webp",
+          "images/webp/2020/exercise-nerve/12.webp",
+          "images/webp/2020/exercise-nerve/13.webp",
+          "images/webp/2020/exercise-nerve/14.webp",
+          "images/webp/2020/exercise-nerve/15.webp",
+          "images/webp/2020/exercise-nerve/16.webp",
+          "images/webp/2020/exercise-nerve/17.webp",
+          "images/webp/2020/exercise-nerve/18.webp",
+          "images/webp/2020/exercise-nerve/19.webp",
+          "images/webp/2020/exercise-nerve/20.webp",
+        ]
+      },
+      "2018": {
+        "sweet-country": [
+          "images/webp/2018/sweet-country/01.webp",
+          "images/webp/2018/sweet-country/02.webp",
+          "images/webp/2018/sweet-country/03.webp",
+          "images/webp/2018/sweet-country/04.webp",
+          "images/webp/2018/sweet-country/05.webp",
+          "images/webp/2018/sweet-country/06.webp",
+          "images/webp/2018/sweet-country/07.webp",
+          "images/webp/2018/sweet-country/08.webp",
+          "images/webp/2018/sweet-country/09.webp",
+        ]
+      },
+      "2017": {
+        "an-unassailable-and-monumental-dignity": [
+          "images/webp/2017/an-unassailable-and-monumental-dignity/01.webp",
+          "images/webp/2017/an-unassailable-and-monumental-dignity/02.webp",
+          "images/webp/2017/an-unassailable-and-monumental-dignity/03.webp",
+          "images/webp/2017/an-unassailable-and-monumental-dignity/04.webp",
+          "images/webp/2017/an-unassailable-and-monumental-dignity/05.webp",
+        ]
+      },
+      "OTHER": {
+        "other": [
+          "images/webp/other/01.webp",
+          "images/webp/other/02.webp",
+          "images/webp/other/03.webp",
+          "images/webp/other/04.webp",
+          "images/webp/other/05.webp",
+          "images/webp/other/06.webp",
+         
+        ]
+      }
+    };
+
+    /* =========================================================
+       EDIT 10: IMAGE TITLE, DATE, LOCATION + LINK
+
+       Add one block for every image whose details you want to show.
+       The path must exactly match the path in EDIT 9 above.
+       COPY the example block, then REPLACE the CAPITALIZED words.
+       Leave moreInfoUrl: "" if you do not want a link button.
+    ========================================================== */
+    const imageDetails = {
+      "images/webp/2026/installation/01.webp": {
+        title: "Lithic",
+        date: "2026",
+        location: "McMichael Canadian Art Collection, Kleinburg, Ontario",
+        moreInfoUrl: "https://mcmichael.com/on-view/aaron-jones-lithic-2026/",
+        moreInfoLabel: "More information"
+      },
+      "images/webp/2026/installation/02.webp": {
+        title: "Lazarus Contained",
+        date: "2026",
+        location: "Union Station, Toronto, Ontario",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+      "images/webp/2026/installation/03.webp": {
+        title: "Lithic",
+        date: "2026",
+        location: "paper collage digitally mastered",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+      "images/webp/2026/installation/04.webp": {
+        title: "Lazarus Contained",
+        date: "2026",
+        location: "paper collage digitally mastered",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+       "images/webp/2025/into-the-wild/01.webp": {
+        title: "Crab",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+       "images/webp/2025/into-the-wild/02.webp": {
+        title: "Gator Tree",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/03.webp": {
+        title: "install shot",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/04.webp": {
+        title: "Ostrich",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/05.webp": {
+        title: "Ostrich",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/06.webp": {
+        title: "Ostrich",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/07.webp": {
+        title: "install shot",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/08.webp": {
+        title: "install shot",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/09.webp": {
+        title: "install shot",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/10.webp": {
+        title: "Untitled",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+        "images/webp/2025/into-the-wild/11.webp": {
+        title: "Untitled",
+        date: "2025",
+        location: "paper collage",
+        moreInfoUrl: "",
+        moreInfoLabel: ""
+      },
+      "images/webp/2024/black-summer-1991/01.webp": {
+        title: "race death newspaper comic",
+        date: "2024",
+        location: "Fonderie Darling",
+        moreInfoUrl: "https://fonderiedarling.org/en/Black-Summer-91",
+        moreInfoLabel: "more info"
+      },
+      "images/webp/2024/black-summer-1991/02.webp": {
+        title: "race death newspaper comic",
+        date: "2024",
+        location: "paper collage digitally mastered",
+        moreInfoUrl: "https://fonderiedarling.org/en/Black-Summer-91",
+        moreInfoLabel: "more info"
+      },
+      "images/webp/2024/black-summer-1991/03.webp": {
+        title: "race death newspaper comic",
+        date: "2024",
+        location: "paper collage digitally mastered",
+        moreInfoUrl: "https://fonderiedarling.org/en/Black-Summer-91",
+        moreInfoLabel: "more info"
+      },
+      "images/webp/2023/we-are-story/01.webp": {
+        title: "Holding My Grandmother's Oranges",
+        date: "2023",
+        location: "paper collage",
+        moreInfoUrl: "https://ago.ca/exhibitions/we-are-story-canada-now-photography-acquisition",
+        moreInfoLabel: "more info"
+      },    
+       "images/webp/2023/fountain-of-dreams/01.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },     
+        "images/webp/2023/fountain-of-dreams/02.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },     
+        "images/webp/2023/fountain-of-dreams/03.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },     
+              "images/webp/2023/fountain-of-dreams/04.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },     
+              "images/webp/2023/fountain-of-dreams/05.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },     
+              "images/webp/2023/fountain-of-dreams/06.webp": {
+        title: "installation shot",
+        date: "2023",
+        location: "The RMG",
+        moreInfoUrl: "https://rmg.on.ca/exhibitions/aaron-jones-fountain-of-dreams",
+        moreInfoLabel: "more info"   
+       },   
+       "images/webp/2023/chasing-shadows/01.webp": {
+        title: "Cherub",
+        date: "2023",
+        location: "paper collage"
+       },
+       "images/webp/2023/chasing-shadows/02.webp": {
+        title: "Seraph",
+        date: "2023",
+        location: "paper collage"
+       },
+          "images/webp/2023/chasing-shadows/03.webp": {
+        title: "Chariot",
+        date: "2023",
+        location: "paper collage"
+       },   
+       "images/webp/2023/chasing-shadows/04.webp": {
+        title: "Lizard and Shell",
+        date: "2023",
+        location: "paper collage"
+       },   
+       "images/webp/2023/chasing-shadows/05.webp": {
+        title: "This Place",
+        date: "2023",
+        location: "paper collage"
+       },   
+       "images/webp/2023/chasing-shadows/06.webp": {
+        title: "Untitled",
+        date: "2023",
+        location: "paper collage"
+       },   
+       "images/webp/2023/chasing-shadows/07.webp": {
+        title: "Elephant",
+        date: "2023",
+        location: "paper collage"
+       },
+       "images/webp/2021/moca-toronto/01.webp": {
+        title: "Living Energy",
+        date: "2021",
+        location: "Toronto, Ontario",
+        moreInfoUrl: "https://moca.ca/exhibitions/greater-toronto-art-2021/aaron-jones/",
+        moreInfoLabel: "more info" 
+       },
+       "images/webp/2021/movers-and-makers/01.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "Prefix ICA"
+       },
+       "images/webp/2021/movers-and-makers/02.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "Prefix ICA"
+       },
+        "images/webp/2021/movers-and-makers/03.webp": {
+        title: "Living Energy",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/movers-and-makers/04.webp": {
+        title: "Refresh",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/movers-and-makers/05.webp": {
+        title: "In the stilted doorway",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/movers-and-makers/06.webp": {
+        title: "Fresh Cerulean",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/movers-and-makers/07.webp": {
+        title: "Speed Golem",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/movers-and-makers/08.webp": {
+        title: "MJ2K",
+        date: "2021",
+        location: "paper collage"
+       },
+        "images/webp/2021/brobdingnagian/01.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/02.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/03.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/04.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/05.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/06.webp": {
+        title: "install shot",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/07.webp": {
+        title: "Untitled",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/08.webp": {
+        title: "Skyscraper on the shore",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/09.webp": {
+        title: "Sitting on the sky in the woods",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/10.webp": {
+        title: "With My Asparagus",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/11.webp": {
+        title: "Miner in Brobdingnagian",
+        date: "2021",
+        location: "HOWARD495"
+       },
+        "images/webp/2021/brobdingnagian/12.webp": {
+        title: "Lookout",
+        date: "2021",
+        location: "HOWARD495"
+       },
+       
+
+
+      
+    };
+
+    const galleryDialog = document.getElementById("gallery-dialog");
+    const cvDialog = document.getElementById("cv-dialog");
+    const galleryTitle = document.getElementById("gallery-title");
+    const galleryImages = document.getElementById("gallery-images");
+    const imageViewer = document.getElementById("image-viewer");
+    const fullSizeImage = document.getElementById("full-size-image");
+    const fullscreenTitle = document.getElementById("fullscreen-title");
+    const fullscreenDate = document.getElementById("fullscreen-date");
+    const fullscreenLocation = document.getElementById("fullscreen-location");
+    const fullscreenMoreInfo = document.getElementById("fullscreen-more-info");
+    const swipeCue = document.getElementById("swipe-cue");
+    const galleryHoverDetails = document.getElementById("gallery-hover-details");
+    const hoverImageName = galleryHoverDetails.querySelector(".hover-image-name");
+    const hoverImageDate = galleryHoverDetails.querySelector(".hover-image-date");
+    let currentGalleryFiles = [];
+    let currentImageIndex = 0;
+    let swipeStartX = 0;
+
+    function showImage(index) {
+      currentImageIndex = (index + currentGalleryFiles.length) % currentGalleryFiles.length;
+      const filename = currentGalleryFiles[currentImageIndex];
+      const details = imageDetails[filename] || {};
+      const galleryParts = galleryTitle.textContent.split(" — ");
+      fullSizeImage.src = filename;
+      fullSizeImage.alt = (details.title || galleryParts[1] || "Artwork") + " — full-size image";
+      fullscreenTitle.textContent = details.title || galleryParts[1] || "Artwork title";
+      fullscreenDate.textContent = details.date || galleryParts[0] || "";
+      fullscreenLocation.textContent = details.location || "";
+      fullscreenLocation.hidden = !details.location;
+      fullscreenMoreInfo.textContent = details.moreInfoLabel || "More information";
+      fullscreenMoreInfo.href = details.moreInfoUrl || "";
+      fullscreenMoreInfo.hidden = !details.moreInfoUrl;
+    }
+
+    function openFullSizeImage(index) {
+      showImage(index);
+      imageViewer.showModal();
+      swipeCue.classList.remove("is-showing");
+      void swipeCue.offsetWidth;
+      swipeCue.classList.add("is-showing");
+    }
+
+    function changeImage(direction) {
+      if (currentGalleryFiles.length > 1) showImage(currentImageIndex + direction);
+    }
+
+    document.querySelectorAll(".year-toggle").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const row = button.closest(".year-row");
+        const alreadyOpen = row.classList.contains("is-open");
+        document.querySelectorAll(".year-row").forEach(function (otherRow) {
+          otherRow.classList.remove("is-open");
+          otherRow.querySelector(".year-toggle").setAttribute("aria-expanded", "false");
+        });
+        if (!alreadyOpen) {
+          row.classList.add("is-open");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    document.querySelectorAll(".year-options button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const year = button.dataset.year;
+        const project = button.dataset.project;
+        const projectTitle = button.textContent.trim();
+        const files = documentation[year][project];
+        currentGalleryFiles = files;
+        galleryTitle.textContent = year + " — " + projectTitle;
+        galleryImages.innerHTML = "";
+
+        files.forEach(function (filename, index) {
+          const figure = document.createElement("figure");
+          const image = document.createElement("img");
+          const details = imageDetails[filename] || { title: projectTitle, date: year };
+          image.src = filename;
+          image.alt = year + " " + projectTitle + " documentation image " + (index + 1);
+          image.loading = "lazy";
+          image.className = "gallery-image-button";
+          image.tabIndex = 0;
+          image.setAttribute("role", "button");
+          image.setAttribute("aria-label", "Open " + image.alt + " full screen");
+          image.addEventListener("click", function () {
+            openFullSizeImage(index);
+          });
+          image.addEventListener("mouseenter", function () {
+            hoverImageName.textContent = details.title;
+            hoverImageDate.textContent = details.date;
+            galleryHoverDetails.classList.add("is-visible");
+          });
+          image.addEventListener("mousemove", function (event) {
+            const labelWidth = galleryHoverDetails.offsetWidth;
+            const preferredLeft = event.clientX + 18;
+            const left = preferredLeft + labelWidth > window.innerWidth - 12
+              ? event.clientX - labelWidth - 18
+              : preferredLeft;
+            galleryHoverDetails.style.left = left + "px";
+            galleryHoverDetails.style.top = (event.clientY + 8) + "px";
+          });
+          image.addEventListener("mouseleave", function () {
+            galleryHoverDetails.classList.remove("is-visible");
+          });
+          image.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openFullSizeImage(index);
+            }
+          });
+          figure.appendChild(image);
+          galleryImages.appendChild(figure);
+        });
+
+        galleryDialog.showModal();
+      });
+    });
+
+    document.querySelectorAll(".open-cv").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        cvDialog.showModal();
+      });
+    });
+
+    document.querySelectorAll(".close-dialog").forEach(function (button) {
+      button.addEventListener("click", function () {
+        button.closest("dialog").close();
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!imageViewer.open) return;
+      if (event.key === "ArrowLeft") changeImage(-1);
+      if (event.key === "ArrowRight") changeImage(1);
+    });
+
+    imageViewer.addEventListener("touchstart", function (event) {
+      swipeStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    imageViewer.addEventListener("touchend", function (event) {
+      const swipeDistance = event.changedTouches[0].clientX - swipeStartX;
+      if (Math.abs(swipeDistance) < 45) return;
+      changeImage(swipeDistance < 0 ? 1 : -1);
+    }, { passive: true });
+
+    imageViewer.addEventListener("close", function () {
+      fullSizeImage.src = "";
+    });
+
+    document.querySelectorAll("dialog").forEach(function (dialog) {
+      dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+/* =============================================================
+   AARON JONES ARTIST WEBSITE — MAIN STYLESHEET
+
+   HOW TO EDIT:
+   1. Open this file in VS Code or TextEdit in plain-text mode.
+   2. Change only the values after each colon at first.
+   3. Save, then refresh index.html in your browser.
+================================================================ */
+
+/* =============================================================
+   EDIT A: FONTS
+
+   SIMPLE OPTION — use a font already on the visitor's computer:
+   --main-font: Arial, Helvetica, sans-serif;
+
+   ACTIVE LOCAL FONT — keep this file beside index.html and style.css:
+   Archivo-Regular.woff
+================================================================ */
+@font-face {
+  font-family: "Archivo";
+  src: url("Archivo-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --main-font: "Archivo", Arial, Helvetica, sans-serif;
+  --background-colour: #f7f7f4;
+  --text-colour: #0b0b0b;
+  --line-colour: rgba(11, 11, 11, 0.30);
+
+  /* DESKTOP VIDEO SIZE: make 68vw smaller or larger. */
+  --desktop-video-width: 68vw;
+
+  /* Prevents the video from becoming enormous on wide screens. */
+  --desktop-video-maximum: 1050px;
+
+  /* TICKER SPEED: a larger number moves more slowly. */
+  --ticker-speed: 34s;
+
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--background-colour);
+  color: var(--text-colour);
+  font-family: var(--main-font);
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+/* PAGE STRUCTURE */
+.site-shell {
+  min-height: 100svh;
+  position: relative;
+}
+
+/* TOP NAVIGATION */
+.site-header {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1.5rem;
+  border-bottom: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;       /* CHANGE TOP TEXT SIZE HERE */
+  letter-spacing: 0.045em;
+  position: relative;
+  z-index: 10;
+  background: var(--background-colour);
+}
+
+.artist-name { font-weight: 700; }
+.primary-nav { display: flex; gap: clamp(1.25rem, 3vw, 3rem); }
+.site-header a:hover,
+.site-header a:focus-visible { text-decoration: underline; text-underline-offset: 0.25rem; }
+
+/* LANDING VIDEO — DESKTOP + TALL DESKTOP */
+.landing {
+  min-height: calc(100svh - 4.5rem);
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 3.5vh, 3rem) 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* WORK YEAR LIST */
+.work-section {
+  min-height: 160svh;
+  padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 5vw, 5rem) 8rem;
+  border-top: none; /* No line between the video and Work */
+  position: relative;
+  z-index: 5;
+  background: transparent; /* SCROLLING WORK PANEL: video fully visible underneath */
+  pointer-events: none; /* EMPTY AREAS PASS CLICKS THROUGH TO THE VIDEO */
+}
+
+/* ABOUT PANEL — scrolls over the fixed video like the Work panel. */
+.about-section {
+  min-height: 100svh;
+  padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 5vw, 5rem) 8rem;
+  border-top: none; /* No line between Work and About */
+  position: relative;
+  z-index: 5;
+  background: transparent; /* SCROLLING ABOUT PANEL: video fully visible underneath */
+  pointer-events: none; /* EMPTY AREAS PASS CLICKS THROUGH TO THE VIDEO */
+}
+
+.about-section h1 {
+  margin: 0 0 3rem;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .055em;
+}
+
+.about-section p {
+  max-width: 52rem;
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  line-height: 1.35;
+}
+
+.work-section h1 {
+  margin: 0 0 3rem;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+.year-list { margin: 0; padding: 0; list-style: none; }
+.year-row {
+  display: flex;
+  align-items: baseline;
+  min-height: 3.4rem;
+}
+.year-toggle, .year-options button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  pointer-events: auto; /* CLICKABLE WORK TEXT TAKES PRIORITY OVER VIDEO */
+}
+.year-toggle { width: 7rem; font-size: clamp(1.7rem, 3vw, 3.25rem); line-height: 1; }
+.year-options { display: flex; flex-wrap: wrap; column-gap: 1.5rem; row-gap: .65rem; visibility: hidden; opacity: 0; transform: translateX(-.4rem); transition: opacity 160ms ease, transform 160ms ease; }
+.year-row.is-open .year-options { visibility: visible; opacity: 1; transform: translateX(0); }
+.year-options button { font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; }
+.year-toggle:hover, .year-toggle:focus-visible, .year-options button:hover, .year-options button:focus-visible { text-decoration: underline; text-underline-offset: .25rem; }
+
+.video-frame {
+  position: fixed;
+  left: 50%;
+  top: calc(50% + 1rem);
+  transform: translate(-50%, -50%);
+  width: min(
+    var(--desktop-video-width),
+    var(--desktop-video-maximum),
+    calc((100svh - 11rem) * 16 / 9)
+  );
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* ABOUT SECTION VIDEO WASH
+   Starts immediately when About enters the screen and takes 1.2 seconds. */
+.video-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease; /* Return speed when leaving About */
+}
+
+body.about-video-washed .video-frame::after {
+  opacity: .90; /* 90% white wash leaves the video exactly 10% visible */
+  transition: opacity 1.2s ease;
+}
+
+/* VIDEO TITLE + DATE + EXHIBITION INFORMATION */
+.video-information {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  max-width: calc(100% - 2rem);
+  padding: .7rem .8rem;
+  background: transparent;
+  color: #000000;
+  opacity: 0;
+  transform: translateY(-.35rem);
+  transition: opacity 500ms ease, transform 500ms ease;
+  pointer-events: none;
+}
+
+.video-information.is-visible { opacity: 1; transform: translateY(0); }
+.video-information h2,
+.video-information p {
+  margin: 0;
+  font-size: .78rem;
+  font-weight: normal;
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.video-information h2 { font-weight: 700; }
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000000;
+}
+
+/* VIDEO BUTTONS */
+.video-controls {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0;
+  transform: translateY(0.35rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.video-frame:hover .video-controls,
+.video-frame:focus-within .video-controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-controls button,
+.video-controls span {
+  border: 0;
+  border-radius: 0;
+  padding: 0.55rem 0.7rem;
+  background: transparent;
+  color: #000000;
+  font-size: 0.78rem;      /* CHANGE VIDEO BUTTON TEXT SIZE HERE */
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.video-controls button { cursor: pointer; }
+
+/* All original website text remains black. */
+.work-section h1,
+.year-toggle,
+.year-options button,
+.about-section h1,
+.about-section p {
+  color: #000000;
+}
+
+/* Titles and controls live completely inside the video and remain white. */
+.video-information h2,
+.video-information p,
+.video-controls button {
+  color: #ffffff;
+}
+
+/* Exact video-sized clipping window for white copies of scrolling text. */
+.video-text-mask {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.video-text-clone {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 0 !important;
+  pointer-events: none;
+  white-space: normal;
+}
+
+/* After a 0.2-second delay, remove the white copies immediately.
+   The original black About text underneath is then visible. */
+body.about-text-black .about-video-text-clone {
+  opacity: 0 !important;
+  transition: none !important;
+}
+
+/* BOTTOM TICKER */
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--line-colour);
+  background: var(--background-colour);
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+}
+
+/* DOCUMENTATION + CV POPUP WINDOWS
+   rgba(..., 0.97) means 97% opaque / only 3% see-through. */
+.site-dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 1.5%;
+  border: 0;
+  background: transparent;
+}
+.site-dialog::backdrop { background: rgba(0, 0, 0, .16); }
+.dialog-window {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid var(--line-colour);
+}
+.dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(247, 247, 244, .97);
+  border-bottom: 1px solid var(--line-colour);
+}
+.dialog-header h2 { margin: 0; font-size: .9rem; font-weight: normal; text-transform: uppercase; letter-spacing: .05em; }
+.dialog-header button, .dialog-header a { border: 0; padding: .35rem 0; background: transparent; color: inherit; cursor: pointer; font-size: .8rem; text-transform: uppercase; text-decoration: underline; text-underline-offset: .2rem; }
+.dialog-actions { display: flex; gap: 1.25rem; }
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* DESKTOP: TWO COLUMNS */
+  align-items: start;
+  gap: clamp(.75rem, 2vw, 2rem);
+  padding: clamp(1rem, 3vw, 3rem);
+}
+.gallery-images figure { margin: 0; min-width: 0; }
+.gallery-images img { display: block; width: 100%; height: auto; }
+.gallery-image-button { cursor: zoom-in; }
+.gallery-image-button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+/* DESKTOP HOVER DETAILS
+   The image name and date follow just to the right of the mouse. */
+.gallery-hover-details {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  max-width: min(16rem, 40vw);
+  padding: .45rem .6rem;
+  background: rgba(247, 247, 244, .96);
+  color: #000;
+  font-size: .75rem;
+  line-height: 1.25;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .12s ease, transform .12s ease;
+}
+.gallery-hover-details span { display: block; }
+.gallery-hover-details .hover-image-date { margin-top: .15rem; }
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-hover-details { display: block; }
+  .gallery-hover-details.is-visible { opacity: 1; transform: translateY(0); }
+}
+
+/* FULL-WINDOW GALLERY IMAGE
+   Escape or clicking the empty dark area closes it.
+   Keyboard arrows and mobile swipes change images. */
+.image-viewer {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border: 0;
+  background: rgba(0, 0, 0, .97);
+  overflow: hidden;
+}
+.image-viewer[open] {
+  display: grid;
+  place-items: center;
+}
+.image-viewer::backdrop { background: rgba(0, 0, 0, .97); }
+.image-viewer img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 8rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+}
+.fullscreen-details {
+  position: fixed;
+  left: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  max-width: calc(100vw - 2rem);
+  color: #fff;
+  font-size: .78rem;
+  line-height: 1.3;
+}
+.fullscreen-details .fullscreen-title { font-weight: 600; }
+.fullscreen-details a {
+  color: inherit;
+  text-underline-offset: .2rem;
+}
+.fullscreen-details [hidden] { display: none; }
+.swipe-cue { display: none; }
+.cv-window { display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
+.cv-window iframe { width: 100%; height: 100%; border: 0; background: white; }
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll var(--ticker-speed) linear infinite;
+  will-change: transform;
+}
+
+.ticker-group { display: flex; flex-shrink: 0; }
+.ticker-entry { display: flex; align-items: center; flex-shrink: 0; }
+
+.ticker-entry a {
+  padding: 0.85rem 1.15rem;
+  font-size: 0.82rem;      /* CHANGE TICKER TEXT SIZE HERE */
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.ticker-entry > span { font-size: 0.65rem; }
+.ticker-entry a:hover,
+.ticker-entry a:focus-visible { text-decoration: underline; text-underline-offset: 0.2rem; }
+
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* =============================================================
+   MOBILE LAYOUT
+   Everything below activates on screens 700px wide or smaller.
+   The video becomes edge-to-edge and buttons remain visible because
+   phones do not have hover.
+================================================================ */
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 4rem;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+  }
+
+  .primary-nav { gap: 1rem; }
+  .landing { padding: 0; }
+
+  .video-frame {
+    width: 100vw;
+    max-width: none;
+    top: 50%;
+  }
+
+  .video-controls {
+    opacity: 1;
+    transform: none;
+    left: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .video-controls button,
+  .video-controls span {
+    padding: 0.48rem 0.58rem;
+    font-size: 0.7rem;
+  }
+
+  .ticker-entry a { padding: 0.75rem 0.9rem; }
+  .work-section { padding: 4rem 1rem 7rem; }
+  .about-section { padding: 4rem 1rem 7rem; }
+  .year-row { min-height: 3.1rem; }
+  .year-toggle { width: 5.5rem; font-size: 1.8rem; }
+  .year-options { gap: .9rem; }
+  .year-options button { font-size: .78rem; }
+  .site-dialog { padding: 1.5%; }
+  .dialog-header { padding: .85rem .75rem; }
+  .gallery-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem .75rem 3rem;
+  }
+  .image-viewer { padding: 2.5rem .5rem 7rem; touch-action: pan-y; }
+  .image-viewer img { max-height: calc(100dvh - 10rem); }
+  .fullscreen-details {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    display: grid;
+    gap: .15rem;
+    font-size: .75rem;
+  }
+
+  /* MOBILE ONLY: the swipe arrow fades away completely after 3 seconds. */
+  .swipe-cue {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    z-index: 2;
+    display: block;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .swipe-cue.is-showing { animation: swipe-cue-fade 3s ease-out forwards; }
+}
+
+@keyframes swipe-cue-fade {
+  0%, 55% { opacity: .9; transform: translateX(0); }
+  70% { opacity: .9; transform: translateX(-10px); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .gallery-images { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ACCESSIBILITY: stops the ticker for visitors who disable animation. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-track { animation-play-state: paused; }
+}
